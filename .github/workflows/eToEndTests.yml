@@ -1,0 +1,16 @@
+name: End to End Playwright tests
+
+on: 
+  workflow_dispatch:
+
+
+jobs:
+  build_service_one:
+    runs-on: ubuntu-latest
+    name: Build Service One
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: Lentyl/blog-ete-tests
+        path: blog-ete-tests
+
