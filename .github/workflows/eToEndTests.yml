@@ -1,16 +1,16 @@
 name: End to End Playwright tests
 
-on: 
-  workflow_dispatch:
-
+on: [push]
 
 jobs:
-  build_service_one:
+  trigger-e2e-tests:
     runs-on: ubuntu-latest
-    name: Build Service One
     steps:
-    - uses: actions/checkout@v2
-      with:
-        repository: Lentyl/blog-ete-tests
-        path: blog-ete-tests
+      - name: trigger automated playwright tests
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{secrets.REPO_ACCESS_TOKEN}}
+          repository: Lentyl/blog-ete-tests
+          event-type: end-to-end-tests
+          client-payload: '{"github": ${{ toJson(github)}}}'
 
