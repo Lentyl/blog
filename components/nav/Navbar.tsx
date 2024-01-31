@@ -12,6 +12,7 @@ import Profile from "./Profile";
 export default function Navbar() {
   const user = useUser((state) => state.user);
 
+
   return (
     <nav className="w-full justify-between items-center flex p-5 xl:p-0">
       <div className="group">
@@ -25,8 +26,8 @@ export default function Navbar() {
         <Link href={"/"} className="font-bold text-2xl">
           DailyMedia
         </Link>
-      </HoverUnderLine>*/}
-
+      </HoverUnderLine> */}
+      {/* {user && <LoginForm />} */}
       {user ? <Profile /> : <LoginForm />}
     </nav>
   );

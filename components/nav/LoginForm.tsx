@@ -12,6 +12,7 @@ export default function LoginForm() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
+
   const handleLogin = () => {
     supabase.auth.signInWithOAuth({
       provider: "github",
